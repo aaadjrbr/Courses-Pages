@@ -3,7 +3,7 @@
 var lock = new Auth0Lock('btLuY70GxivGYTGKVUxh0XJLmgqB4xqV', 'dev-guf031gyn3qsfpkw.us.auth0.com', {
     auth: {
         responseType: 'token id_token',
-        redirectUrl: 'https://adenilsonribeiro-cursos.cloud/', // Replace with your callback URL
+        redirectUrl: 'https://adenilsonribeiro-cursos.cloud/bem-vindo', // Replace with your callback URL
         audience: 'https://dev-guf031gyn3qsfpkw.us.auth0.com/api/v2/',
         params: {
             scope: 'openid profile email',
