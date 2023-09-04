@@ -16,9 +16,16 @@ function login() {
     lock.show();
 }
 
-// Function to handle logout (you need to implement this)
+// Function to handle logout
 function logout() {
-    // Implement logout logic here
+    // Clear any user-related data or tokens from your application
+    // For example, remove the user's ID token from localStorage
+    localStorage.removeItem('id_token');
+
+    // Use Auth0's logout method to log the user out from Auth0
+    lock.logout({
+        returnTo: 'https://adenilsonribeiro-cursos.cloud/', // Replace with the URL where you want to redirect the user after logout
+    });
 }
 
 // Handle the authentication callback
@@ -46,6 +53,3 @@ function parseJwt(token) {
 
     return JSON.parse(jsonPayload);
 }
-
-
-
