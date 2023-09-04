@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("../../assets/curso1-images-course/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    font-size: 2.4rem;
+    color: black;
+}
+
+h2 {
+    font-size: 2rem;
+    color: black;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+ nav, main {
+    margin: 30px;
+    padding: 15px;
+    flex: 1;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+/* MENU */
+.nav ul {
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Align the menu items horizontally to the center */
+  }
+  
+  .nav li {
+    color: black;
+    font-size: 0.9rem; /* Adjust the font size to make the menu smaller */
+    line-height: 30px; /* Adjust the line height to make the menu smaller */
+    height: auto; /* Adjust the height to make the menu smaller */
+    border-radius: 30px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 5px;
+    transition: .3s background-color;
+    border-radius: 20px;
+  }
+  
+  .nav a:hover {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0);
+    color: white;
+    padding: 5px;
+    border-radius: 20px;
+  }
+  
+  .nav a.active {
+    background-color: rgba(255, 255, 255);
+    margin-left: 2px;
+    color: black;
+    border-radius: 20px;
+    cursor: default;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .nav li {
+      width: 100px; /* Adjust the width to make the menu smaller */
+      border-bottom: none;
+      border-radius: 30px;
+      height: 40px; /* Adjust the height to make the menu smaller */
+      line-height: 40px; /* Adjust the line height to make the menu smaller */
+      font-size: 1.2em; /* Adjust the font size to make the menu smaller */
+    }
+  
+    .nav ul {
+      overflow: visible;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  
+    .nav {
+      border-radius: 2px;
+      padding: 10px;
+      height: 40px; /* Adjust the height to make the menu smaller */
+      width: auto;
+      display: flex;
+      justify-content: center; /* Align the menu horizontally to the center */
+    }
+  }
+
+  /* END OF MENU */
+
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    min-height: 10vh;
+  }
+
+#adenilson-img img {
+    max-height: 50%;
+    max-width: 60%;
+    object-fit: contain;
+  }
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+/* Styling for links */
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Style for the "Go Back" button */
+.goback-button {
+    background-color: #007BFF; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for the button */
+  .goback-button:hover {
+    background-color: #0056b3; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+  }
+
+  /* Quiz stuff */
+
+  .quiz-container {
+    background: rgb(128, 140, 240);
+    border-radius: 15px;
+    padding: 15px 5px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+button {
+    padding: 15px 20px;
+    background-color: rgb(128, 140, 240);
+    margin: 2px;
+    border-radius: 7px;
+    color: #fff;
+    border: 2;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+#result-container {
+    display: none;
+}
+
+/* flag stuff from the footer */
+#flag-img {
+    height: 20px;
+    width: auto;
+    border-radius: 2px;
+  }
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* Hide the scrollbar but keep functionality */
+::-webkit-scrollbar {
+    width: 15px; /* Width of the scrollbar */
+}
+
+/* Track (the area behind the thumb) */
+::-webkit-scrollbar-track {
+    background: #cecece; /* Background color of the track */
+}
+
+/* Thumb (the draggable scrolling handle) */
+::-webkit-scrollbar-thumb {
+    background: #000000; /* Background color of the thumb */
+}
+
+/* On hover, style the thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-color: #000000 #333; /* Thumb and track colors */
+}

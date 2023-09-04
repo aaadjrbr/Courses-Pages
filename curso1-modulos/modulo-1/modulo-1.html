@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en, pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <title>Your Course</title>
+</head>
+<body>
+
+    <header>
+        <br>
+        <h1>Módulo 2 - Verbo to be, nacionalidades, pronomes,<br> posssessivo, cumprimentos, família</h1><br>
+        <button class="goback-button" onclick="goBack()">Voltar</button>
+        <br>
+    </header>
+
+    <main>
+        <h2>Bem-vindo(a) para as lições do Módulo 1 do nosso curso, "English for Brazilians"</h2>
+
+    </main>
+    
+
+    
+    <main class="course-container">
+        <nav class="modules-list">
+            <ul>
+                <li><a href="#module1" class="module-link">Módulo 1 - Verbo “To Be”</a></li>
+                <li><a href="#module2" class="module-link">Module 2</a></li>
+                <li><a href="#module3" class="module-link">Module 3</a></li>
+                <!-- Add more modules here -->
+            </ul>
+        </nav>
+        
+        <section class="videos-section">
+            <div class="video-with-text" id="module1"> <!-- Added IDs to sections -->
+                <h2 style="color:black">Módulo 1: O Verbo "To be"</h2>
+                <p>Nesse módulo você dará os seus primeiros passos no mundo
+                    do Inglês, entendendo estruturas e primeiras palavras.</p>
+                
+                <ul>
+                <a href="./verb-to-be.html">1 - Verbo to be</a>
+                </ul>
+
+                <div class="video-container">
+                    <!-- Replace with your actual video embed code -->
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allowfullscreen></iframe>
+                    <!-- Add more videos here -->
+                </div>
+            </div>
+            
+            <div class="video-with-text" id="module2">
+                <h2 style="color:black">Module 2: CSS Styling</h2>
+                <p>Discover how to make your webpages visually appealing...</p>
+                
+                
+                <div class="video-container">
+                    <!-- Replace with your actual video embed code -->
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allowfullscreen></iframe>
+                    <!-- Add more videos here -->
+                </div>
+            </div>
+
+            <div class="video-with-text" id="module3">
+                <h2 style="color:black">Module 3: Example</h2>
+                <p>Discover how to make your webpages visually appealing...</p>
+                
+                <div class="video-container">
+                    <!-- Replace with your actual video embed code -->
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allowfullscreen></iframe>
+                    <!-- Add more videos here -->
+                </div>
+            </div>
+
+            <!-- Add more video-with-text containers here -->
+        </section>
+    </main>
+    
+    <script src="../../assets/js/script-course.js"></script>
+    <script>
+        // JavaScript to toggle content visibility based on clicked module
+        const moduleLinks = document.querySelectorAll('.module-link');
+        const contentSections = document.querySelectorAll('.video-with-text');
+
+        moduleLinks.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                contentSections.forEach((section, sectionIndex) => {
+                    if (index === sectionIndex) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

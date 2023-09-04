@@ -1,0 +1,174 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+h2 {
+    font-size: 1rem;
+    color: black;
+}
+
+h3 {
+    font-size: 0.9rem;
+}
+
+ nav, main {
+    margin: 20px;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background:black;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+/* Styling for links */
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 60%; /* Roughly 3:5 aspect ratio (slightly rectangular) */
+    height: 0;
+    text-align: center; /* Center horizontally */
+}
+
+.video-container iframe {
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 70%; /* Adjust the width as needed */
+    height: 70%; /* Adjust the height as needed */
+}
+
+/* Additional CSS for the new layout */
+.course-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.modules-list {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.modules-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modules-list li {
+    margin-bottom: 10px;
+}
+
+.videos-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px; /* Add margin to create space between videos and modules list */
+}
+
+.video-container {
+    margin-bottom: 20px;
+}
+
+.slideshow-container {
+    max-width: 360px;
+    margin: auto;
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+img {
+    width: 80%;
+    padding: 5px;
+    height: 230px;
+    border-radius: 15px;
+}
+
+/* Hide the modules list on small screens */
+@media (max-width: 768px) {
+    .modules-list {
+        display: none;
+    }
+}
+
+/* Hide the scrollbar but keep functionality */
+::-webkit-scrollbar {
+    width: 15px; /* Width of the scrollbar */
+}
+
+/* Track (the area behind the thumb) */
+::-webkit-scrollbar-track {
+    background: #cecece; /* Background color of the track */
+}
+
+/* Thumb (the draggable scrolling handle) */
+::-webkit-scrollbar-thumb {
+    background: #000000; /* Background color of the thumb */
+}
+
+/* On hover, style the thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-color: #000000 #333; /* Thumb and track colors */
+}
+
+/* Style for the "Go Back" button */
+.goback-button {
+    background-color: #007BFF; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for the button */
+  .goback-button:hover {
+    background-color: #0056b3; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+  }
+  
+
+/* for the module quiz */
+
