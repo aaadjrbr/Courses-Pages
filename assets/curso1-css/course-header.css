@@ -17,7 +17,7 @@ header .item .cover {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -44,18 +44,18 @@ header .item .cover .header-content .line {
 
 header .item .cover .header-content h2 {
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   color: #fff;
 }
 header .item .cover .header-content h1 {
-  font-size: 2.1rem;
+  font-size: 2.8rem;
   font-weight: 600;
   margin: 5px 0 20px;
   word-spacing: 3px;
   color: #fff;
 }
 header .item .cover .header-content h4 {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 36px;
   color: #fff;

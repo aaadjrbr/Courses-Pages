@@ -218,23 +218,16 @@ footer {
     width: 100%;
 }
 
-/* image on the right palce stuff */
-.image-text-container {
-    display: flex;
-    align-items: center; /* Vertically center the content */
-    gap: 50px; /* Add spacing between the image and text */
-}
-
-.text-content {
-    color: black;
-    font-weight: bold;
-}
 
 /* Adjust styling for the image as needed */
 .img2 {
     max-width: 250px; /* Ensure the image doesn't exceed its container */
     height: 250px; /* Maintain the image's aspect ratio */
     border-radius: 140px;
+    display: block; /* Make sure the image is a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 
