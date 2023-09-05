@@ -35,19 +35,10 @@ lock.on('authenticated', function(authResult) {
     console.log('Authenticated!', idToken);
 
     // You can now use the 'idToken' to verify the user's identity and perform actions on the client-side as needed.
-
+    
     // For example, you can display the user's name and email
     var profile = parseJwt(idToken);
     console.log('User Profile:', profile);
-
-    // Check if the user has the "Paid User" role
-    if (profile && profile['rol_Sl0EWkmWN5Ugvc2L'].includes('paid_user')) {
-        // User has access to the content, load/render it
-        showPaidContent();
-    } else {
-        // User doesn't have access, show an error message or redirect
-        showAccessDeniedMessage();
-    }
 
     // You can also store the ID token in a secure manner, depending on your application's requirements.
 });
@@ -61,16 +52,4 @@ function parseJwt(token) {
     }).join(''));
 
     return JSON.parse(jsonPayload);
-}
-
-// Function to display paid content
-function showPaidContent() {
-    // Replace this with code to show your paid content
-    console.log('Displaying paid content...');
-}
-
-// Function to display an access denied message or redirect
-function showAccessDeniedMessage() {
-    // Replace this with code to handle access denied scenario
-    console.log('Access denied. Redirecting or showing an error message...');
 }
