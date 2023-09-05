@@ -59,7 +59,7 @@ const idToken = localStorage.getItem('id_token');
 
 if (!idToken) {
   // User is not authenticated, redirect them to the login page.
-  window.location.href = './index.html';
+  window.location.href = 'https://adenilsonribeiro-cursos.cloud/';
 } else {
   // User is authenticated, allow access to the protected link.
   // You can fetch and display the resource here.
