@@ -1,6 +1,6 @@
 /* Style for header content */
 header .item {
-  height: 45vh; /* Adjust the height as needed */
+  height: auto; /* Adjust the height as needed */
   position: relative;
 }
 
