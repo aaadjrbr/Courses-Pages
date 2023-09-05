@@ -53,3 +53,14 @@ function parseJwt(token) {
 
     return JSON.parse(jsonPayload);
 }
+
+// Check for the presence of the ID token (assuming you have already obtained it during authentication).
+const idToken = localStorage.getItem('id_token');
+
+if (!idToken) {
+  // User is not authenticated, redirect them to the login page.
+  window.location.href = './index.html';
+} else {
+  // User is authenticated, allow access to the protected link.
+  // You can fetch and display the resource here.
+}
