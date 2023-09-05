@@ -11,11 +11,11 @@
 
     <style>
     
-        body {
+    body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
+            background-color: #ffffff;
+            margin: 20px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -51,6 +51,10 @@
             text-decoration: none;
             color: #007BFF;
             font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
         }
         
         button {
@@ -67,20 +71,41 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        img {
+            max-height: 150px;
+            max-width: 150px;
+            border-radius: 80px;
+            align-items: center;
+            display: flex;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
+    <button onclick="logout()">Logout</button>
     <div id="adenilson-img">
         <img src="../../assets/curso1-images-course/english-w-adenilson.png" draggable="false" alt="Non-draggable image">
     </div>
 
-    <h1>Auth0 Callback Page</h1>
-    <h2> Server side non-users-side</h2>
+    
+
+
+
+    <h2>Que bom te ver de volta! :)</h2>
+    <h1>Selecione o seu curso abaixo:</h1>
     <ul>
-    <li><a href='/curso-english-for-brazilians'>English for Brazilians (Inglês p/ Brazileiros)</a></li>
+    <li><a href='./curso-english-for-brazilians.html'>English for Brazilians (Inglês p/ Brazileiros)</a></li>
     </ul>
 
-<button onclick="logout()">Logout</button>
+    <a href="./curso-english-for-brazilians.html">
+    <div class="img">
+        <img src="../../assets/curso1-images-course/services-english-for-brazillians.png">
+    </div>
+    </a>
+    <br><br>
+
+
 
     <script src="https://cdn.auth0.com/js/lock/11.30/lock.min.js"></script>
     <script src="./general-js/auth.js"></script>

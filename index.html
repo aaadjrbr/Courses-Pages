@@ -11,9 +11,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
+            background-color: #ffffff;
+            margin: 20px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -54,7 +54,26 @@
             max-width: 240px;
             object-fit: contain;
         }
+        #whatsapp-img {
+            height: 40px;
+            width: auto;
+            border-radius: 5px;
+        }
+        .glow-button {
+            display: inline-block;
+            padding: 5px;
+            height: 40px;
+            width: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0); /* Set initial box shadow with no glow effect */
+            background-color: #ffffff;
+            transition: box-shadow 0.3s ease-in-out; /* Add a smooth transition effect */
+        }
 
+        .glow-button:hover {
+            box-shadow: 0 0 15px rgba(23, 184, 68, 0.87);
+            background-color: #ffffff; /* Customize the color and intensity of the glow effect when hovered */
+        }
     </style>
 </head>
 <body>
@@ -63,11 +82,13 @@
         <img src="../../assets/curso1-images-course/english-w-adenilson.png" draggable="false" alt="Non-draggable image">
     </div>
 
+    
     <h1>Bem-vindo(a) nossa área de log-in, clique no botão <br> para começar:</h1>
     
-    <button onclick="login()">Login</button>
-
-
+    <button onclick="login()">Login</button><br><br>
+    <a href="https://wa.me/5564992521429?" class="glow-button">
+        <img id="whatsapp-img" src="./assets/curso1-images-course/wpp-img.png">
+      </a>
     
     <script src="https://cdn.auth0.com/js/lock/11.30/lock.min.js"></script>
     <script src="./general-js/auth.js"></script>
