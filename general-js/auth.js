@@ -34,11 +34,22 @@ lock.on('authenticated', function(authResult) {
     var idToken = authResult.idToken;
     console.log('Authenticated!', idToken);
 
-    // You can now use the 'idToken' to verify the user's identity and perform actions on the client-side as needed.
-    
-    // For example, you can display the user's name and email
+    // Parse the ID token to access user data
     var profile = parseJwt(idToken);
     console.log('User Profile:', profile);
+
+    // Check if the user has the "paid_user" role
+    var hasPaidUserRole = profile.roles && profile.roles.includes('paid_user');
+
+    if (hasPaidUserRole) {
+        // User has the "paid_user" role, perform actions for paid users
+        console.log('User is a paid user');
+        // You can add code here to handle actions for paid users
+    } else {
+        // User does not have the "paid_user" role, perform actions for non-paid users
+        console.log('User is not a paid user');
+        // You can add code here to handle actions for non-paid users
+    }
 
     // You can also store the ID token in a secure manner, depending on your application's requirements.
 });
