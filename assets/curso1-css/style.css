@@ -88,8 +88,8 @@ a:hover {
     border-radius: 20px;
     top: 0;
     left: 0;
-    width: 70%; /* Adjust the width as needed */
-    height: 70%; /* Adjust the height as needed */
+    width: 100%; /* Adjust the width as needed */
+    height: 100%; /* Adjust the height as needed */
 }
 
 /* Additional CSS for the new layout */
