@@ -5,11 +5,11 @@ export async function handler(event, context) {
   try {
     // Define your PlanetScale database connection details
     const config = {
-      host: process.env.DATABASE_HOST,
-      username: process.env.DATABASE_USERNAME,
-      password: process.env.DATABASE_PASSWORD,
-    };
-
+        host: 'aws.connect.psdb.cloud',     // Replace with your actual database host
+        username: '3w9lke9ua0wg8wj2mc1r',   // Replace with your actual database username
+        password: 'main-2023-09-12-41ym2o', // Replace with your actual database password
+      };
+      
     // Connect to the database
     const conn = connect(config);
 
