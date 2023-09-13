@@ -1,3 +1,15 @@
+import 'dotenv/config'
+import { connect } from '@planetscale/database'
+
+const config = {
+  host:'aws.connect.psdb.cloud',
+  username: '3w9lke9ua0wg8wj2mc1r',
+  password: 'main-2023-09-12-41ym2o',
+}
+
+const conn = connect(config)
+const results = await conn.execute('select 1 from dual where 1=?', [1])
+
 // Import and initialize Auth0
 import { Auth0Client } from '@auth0/auth0-spa-js';
 
@@ -11,7 +23,7 @@ const auth0 = new Auth0Client({
 async function fetchData() {
   try {
     const authToken = await auth0.getIdToken(); // Get the user's Auth0 ID token
-    const response = await fetch('/.netlify/functions/planetScaleQuery', {
+    const response = await fetch('../netlify/functions/planetScaleQuery', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${authToken}`,
