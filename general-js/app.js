@@ -19,8 +19,8 @@ const app = initializeApp(firebaseConfig);
 // Get the Firebase Auth instance
 const auth = getAuth();
 
-// Function to sign in with Firebase
-const signInWithFirebase = () => {
+// Function to sign in with Email/Password
+const signInWithEmailAndPassword = () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
@@ -36,5 +36,24 @@ const signInWithFirebase = () => {
         .catch((error) => {
             // Handle sign-in errors
             console.error('Error signing in:', error);
+        });
+};
+
+// Function to sign in with Google
+const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+
+    signInWithPopup(auth, provider)
+        .then((userCredential) => {
+            // User signed in with Google successfully
+            const user = userCredential.user;
+            console.log('User signed in with Google:', user);
+
+            // Redirect the user to a different page
+            window.location.href = './bem-vindo.html'; // Replace with the desired destination
+        })
+        .catch((error) => {
+            // Handle Google sign-in errors
+            console.error('Error signing in with Google:', error);
         });
 };

@@ -8,18 +8,19 @@
     <link rel="apple-touch-icon" href="./logo.png">
     <title>English w/ Adenilson</title>
     <link rel="stylesheet" href="./assets/curso1-css/style.css">
-    
+
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
 </head>
 <body>
 
+
     <div id="adenilson-img">
         <img src="../../assets/curso1-images-course/english-w-adenilson.png" draggable="false" alt="Non-draggable image">
     </div>
 
-    <h1>Bem-vindo(a) à nossa área de login, insira seu email e senha para continuar:</h1>
+    <h1>Bem-vindo(a) à nossa área de login, insira seu email e senha ou faça login com o Google:</h1>
 
     <label for="email">Email:</label>
     <input type="email" id="email" placeholder="Email"><br>
@@ -27,7 +28,9 @@
     <label for="password">Senha:</label>
     <input type="password" id="password" placeholder="Senha"><br><br>
     
-    <button onclick="signInWithFirebase()">Login</button><br><br>
+    <button onclick="signInWithEmailAndPassword()">Login with Email/Password</button><br><br>
+
+    <button onclick="signInWithGoogle()">Login with Google</button><br><br>
 
     <a href="https://wa.me/5564992521429?" class="glow-button">
         <img id="whatsapp-img" src="./assets/curso1-images-course/wpp-img.png">
