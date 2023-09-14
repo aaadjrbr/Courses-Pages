@@ -1,3 +1,4 @@
+// Initialize Auth0 Lock
 var lock = new Auth0Lock('btLuY70GxivGYTGKVUxh0XJLmgqB4xqV', 'dev-guf031gyn3qsfpkw.us.auth0.com', {
     auth: {
         responseType: 'token id_token',
@@ -37,6 +38,15 @@ lock.on('authenticated', function(authResult) {
     // For example, you can display the user's name and email
     var profile = parseJwt(idToken);
     console.log('User Profile:', profile);
+
+    // Check if the user has the 'paid_user' role in their app_metadata
+    if (profile && profile.app_metadata && profile.app_metadata.roles && profile.app_metadata.roles.includes('paid_user')) {
+        // User has the 'paid_user' role, allow access or redirect to the desired page
+        // Example: window.location.href = '/dashboard'; // Redirect to the dashboard
+    } else {
+        // User does not have the required role, redirect to a different page
+        window.location.href = './error.html'; // Redirect to an unauthorized page
+    }
 
     // You can also store the ID token in a secure manner, depending on your application's requirements.
 });
