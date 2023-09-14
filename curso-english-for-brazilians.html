@@ -134,6 +134,25 @@
     </footer>
 
 
+    <script>
+        // Assuming you have the user's role stored in the idToken or user session
+const userRole = getUserRole(); // Implement a function to fetch the user's role
+
+// Define a function to check if the user has the required role
+function hasUserRole(requiredRole) {
+  return userRole === requiredRole;
+}
+
+// Example: Check if the user has access to a specific page
+if (!hasUserRole('paid_user')) {
+  // Redirect to an error page or the login page
+  window.location.href = './index.html';
+}
+
+    </script>
+
+
+
     <script src="./node_modules/auth0-js/dist/auth0.min.js"></script>
     <script src="./general-js/app.js"></script>
     <script src="./general-js/auth.js"></script>
