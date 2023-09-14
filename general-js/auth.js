@@ -1,5 +1,3 @@
-// auth.js
-
 var lock = new Auth0Lock('btLuY70GxivGYTGKVUxh0XJLmgqB4xqV', 'dev-guf031gyn3qsfpkw.us.auth0.com', {
     auth: {
         responseType: 'token id_token',

@@ -28,11 +28,19 @@ export async function handler(event, context) {
       };
     }
 
+    // Check if the user has the 'paid_user' role
+    if (!user.app_metadata || !user.app_metadata.roles || !user.app_metadata.roles.includes('paid_user')) {
+      return {
+        statusCode: 403,
+        body: JSON.stringify({ error: 'Access denied' }),
+      };
+    }
+
     // Define your PlanetScale database connection details
     const config = {
       host: 'aws.connect.psdb.cloud',     // Replace with your actual database host
-      username: '3w9lke9ua0wg8wj2mc1r',         // Replace with your actual database username
-      password: 'main-2023-09-12-41ym2o',         // Replace with your actual database password
+      username: '3w9lke9ua0wg8wj2mc1r',   // Replace with your actual database username
+      password: 'main-2023-09-12-41ym2o', // Replace with your actual database password
     };
 
     // Connect to the database
