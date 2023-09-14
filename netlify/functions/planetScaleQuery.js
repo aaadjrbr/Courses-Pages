@@ -46,15 +46,24 @@ export async function handler(event, context) {
     // Connect to the database
     const conn = connect(config);
 
-    // Execute your PlanetScale query
-    const results = await conn.execute('SELECT * FROM users');
+    // Execute your PlanetScale queries for each table
+    const progressResults = await conn.execute('SELECT * FROM progress_tracking');
+    const commentsResults = await conn.execute('SELECT * FROM comments');
+    const reviewsResults = await conn.execute('SELECT * FROM reviews');
+
+    // Combine the results into a single object
+    const combinedResults = {
+      progress: progressResults,
+      comments: commentsResults,
+      reviews: reviewsResults,
+    };
 
     // Close the database connection
     await conn.close();
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Query successful', results }),
+      body: JSON.stringify({ message: 'Query successful', results: combinedResults }),
     };
   } catch (error) {
     return {
