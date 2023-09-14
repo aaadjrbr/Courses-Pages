@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@planetscale/database": "^1.11.0",
-    "auth0-js": "^9.22.1",
-    "dotenv": "^16.3.1"
-  }
-}

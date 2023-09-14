@@ -122,13 +122,6 @@
         <!-- Add more modules here -->
 
 
-
-        <button id="fetchDataButton">Fetch Data</button>
-        <div id="dataDisplay"></div>
-
-        
-
-
     </main>
 
     <footer>
@@ -139,28 +132,6 @@
     </footer>
 
 
-    <script>
-        // Assuming you have the user's role stored in the idToken or user session
-const userRole = getUserRole(); // Implement a function to fetch the user's role
-
-// Define a function to check if the user has the required role
-function hasUserRole(requiredRole) {
-  return userRole === requiredRole;
-}
-
-// Example: Check if the user has access to a specific page
-if (!hasUserRole('paid_user')) {
-  // Redirect to an error page or the login page
-  window.location.href = './index.html';
-}
-
-    </script>
-
-
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.19/auth0-spa-js.production.js"></script>
-    <script src="./node_modules/auth0-js/dist/auth0.min.js"></script>
-    <script type="module" src="./general-js/app.js"></script>
-    <script src="./general-js/auth.js"></script>
     <script src="./assets/curso1-js/script-course.js"></script>
     <script src="./assets/curso1-js/course-header.js"></script>
 </body>
