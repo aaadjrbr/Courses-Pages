@@ -47,7 +47,7 @@ export async function handler(event, context) {
     const conn = connect(config);
 
     // Execute your PlanetScale query
-    const results = await conn.execute('SELECT * FROM course-stuff');
+    const results = await conn.execute('SELECT * FROM main');
 
     // Close the database connection
     await conn.close();
