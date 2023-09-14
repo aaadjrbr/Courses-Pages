@@ -24,7 +24,7 @@ const auth0 = new Auth0Client({
 async function fetchData() {
   try {
     const authToken = await auth0.getIdToken(); // Get the user's Auth0 ID token
-    const response = await fetch('../netlify/functions/planetScaleQuery', {
+    const response = await fetch('./netlify/functions/planetScaleQuery', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${authToken}`,
