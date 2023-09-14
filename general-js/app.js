@@ -1,5 +1,6 @@
-import 'dotenv/config'
-import { connect } from '@planetscale/database'
+import 'dotenv/config';
+import { connect } from '@planetscale/database';
+
 
 const config = {
   host:'aws.connect.psdb.cloud',
