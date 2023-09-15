@@ -6,113 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./logo.png" type="image">
     <link rel="apple-touch-icon" href="./logo.png">
-    <title>Login - English w/ Adenilson</title>
+    <title>English w/ Adenilson</title>
 
-    <!-- Include CSS styles for login page -->
+
     <style>
-        body {
+    
+    body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+            background-color: #ffffff;
+            margin: 20px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
         }
-
-        .container {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            width: 300px;
+        #adenilson-img img {
+            max-height: 300px;
+            max-width: 240px;
+            object-fit: contain;
         }
-
+        
         h1 {
-            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
+        
+        h2 {
+            font-size: 18px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
         }
-
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        
         button {
-            background-color: #007bff;
+            background-color: #007BFF;
             color: #fff;
             border: none;
-            border-radius: 3px;
+            margin-top: 15px;
             padding: 10px 20px;
             cursor: pointer;
-            width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-
+        
         button:hover {
             background-color: #0056b3;
         }
 
-        a {
-            text-align: center;
-            margin-top: 10px;
-            display: block;
+        img {
+            max-height: 150px;
+            max-width: 150px;
+            border-radius: 80px;
+            align-items: center;
+            display: flex;
+            margin-bottom: 20px;
         }
     </style>
-
 </head>
 <body>
-    <div class="container">
-        <h1>Login to Your Account</h1>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Email"><br>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" placeholder="Password"><br><br>
-        
-        <button onclick="signInWithEmailAndPassword()">Login</button><br><br>
-
-        <a href="./registration.html">Don't have an account? Register here</a>
+    <div id="adenilson-img">
+        <img src="../../assets/curso1-images-course/english-w-adenilson.png" draggable="false" alt="Non-draggable image">
     </div>
 
-    <!-- Include Firebase JavaScript SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+    <button id="login-button">Entre na sua conta aqui</button><br><br>
+    
 
-    <!-- Include your Firebase configuration -->
-    <script src="./general-js/app.js" type="module"></script>
 
-    <script>
-        // Function to sign in with Email/Password
-        const signInWithEmailAndPassword = () => {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+    <h2>Que bom te ver de volta! :)</h2>
 
-            customSignInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // User signed in successfully
-                    const user = userCredential.user;
-                    console.log('User signed in:', user);
-
-                    // You can choose to redirect the user to a different page or show a confirmation message
-                    window.location.href = './bem-vindo.html'; // Replace with the desired destination
-                })
-                .catch((error) => {
-                    // Handle sign-in errors
-                    console.error('Error signing in:', error);
-                });
-        };
-    </script>
 </body>
 </html>
