@@ -8,12 +8,8 @@
     <link rel="apple-touch-icon" href="./logo.png">
     <title>English w/ Adenilson</title>
 
-    
-
-
     <style>
-    
-    body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
             margin: 20px;
@@ -24,46 +20,17 @@
             justify-content: center;
             height: 100vh;
         }
-        #adenilson-img img {
-            max-height: 300px;
-            max-width: 240px;
-            object-fit: contain;
-        }
         
         h1 {
+            text-align: center;
             font-size: 24px;
             margin-bottom: 20px;
-        }
-        
-        h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        li {
-            margin-bottom: 10px;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        a:hover {
-            color: #0056b3;
         }
         
         button {
             background-color: #007BFF;
             color: #fff;
             border: none;
-            margin-top: 15px;
             padding: 10px 20px;
             cursor: pointer;
             font-size: 18px;
@@ -75,29 +42,55 @@
             background-color: #0056b3;
         }
 
-        img {
-            max-height: 150px;
-            max-width: 150px;
-            border-radius: 80px;
-            align-items: center;
+        .container {
             display: flex;
-            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+        }
+        #adenilson-img img {
+            max-height: 300px;
+            max-width: 240px;
+            object-fit: contain;
+        }
+        #whatsapp-img {
+            height: 40px;
+            width: auto;
+            border-radius: 5px;
+        }
+        .glow-button {
+            display: inline-block;
+            padding: 5px;
+            height: 40px;
+            width: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0); /* Set initial box shadow with no glow effect */
+            background-color: #ffffff;
+            transition: box-shadow 0.3s ease-in-out; /* Add a smooth transition effect */
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 15px rgba(23, 184, 68, 0.87);
+            background-color: #ffffff; /* Customize the color and intensity of the glow effect when hovered */
         }
     </style>
 </head>
 <body>
+
     <div id="adenilson-img">
         <img src="../../assets/curso1-images-course/english-w-adenilson.png" draggable="false" alt="Non-draggable image">
     </div>
 
-    <button id="login-button">Entre na sua conta aqui</button><br><br>
     
-
-
-    <h2>Que bom te ver de volta! :)</h2>
-
-    <script src="./general-js/app.js"></script>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
-
+    <h1>Bem-vindo(a) nossa área de log-in, clique no botão <br> para começar:</h1>
+    
+    <button onclick="login()">Login</button><br><br>
+    <a href="https://wa.me/5564992521429?" class="glow-button">
+        <img id="whatsapp-img" src="./assets/curso1-images-course/wpp-img.png">
+      </a>
+    
+    <script src="https://cdn.auth0.com/js/lock/11.30/lock.min.js"></script>
+    <script src="./general-js/auth.js"></script>
 </body>
 </html>
