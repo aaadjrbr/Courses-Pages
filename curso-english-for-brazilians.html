@@ -129,7 +129,7 @@
                 <!-- Error message element (initially hidden) -->
                 <h3><strong>Acessar Módulos:</strong></h3>
                 <br>
-                <p id="errorMessage" style="display: none; color: red;">Falha na autenticação. Certifique-se que seu nome e/ou senha estão corretos.</p>
+                
                 <form id="loginForm">
                     <label for="nome" style="font-weight: bold;">Nome:</label>
                     <input class="box" type="text" id="nome" name="nome" required><br>
@@ -139,7 +139,13 @@
                     <label for="senha" style="font-weight: bold;">Senha:</label>
                     <input class="box" type="password" id="senha" name="senha" required><br>
                     <br>
-                    <input class="button2" type="submit" value="Acessar">
+
+                    <p id="errorMessage" style="display: none; color: red;">Falha na autenticação. Certifique-se que seu nome e/ou senha estão corretos.</p>
+        
+                    <input class="button2" type="submit" value="Acessar"><br>
+                    <br>
+                    <label for="rememberMe">Ficar connectado</label>
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
                 </form>
             
 
