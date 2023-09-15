@@ -16,10 +16,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 // Get the Firebase Auth instance
-const auth = getAuth();
+const auth = getAuth(app); // Notice the 'app' parameter here
 
 // Function to sign in with Email/Password
 const signInWithEmailAndPassword = (email, password) => {
