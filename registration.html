@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./logo.png" type="image">
     <link rel="apple-touch-icon" href="./logo.png">
-    <title>Login - English w/ Adenilson</title>
+    <title>Register - English w/ Adenilson</title>
 
     <script type="module" src="./general-js/app.js"></script>
 
@@ -14,7 +14,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
 
-    <!-- Include CSS styles for login page -->
+    <!-- Include CSS styles for registration page -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,6 +46,7 @@
             margin-bottom: 5px;
         }
 
+        input[type="text"],
         input[type="email"],
         input[type="password"] {
             width: 100%;
@@ -77,33 +78,33 @@
     </style>
 
     <script>
-        // Initialize Firebase with your configuration (same as registration page)
+        // Initialize Firebase with your configuration (same as login page)
         // ...
 
-        // Function to sign in with Email/Password
-        const signInWithEmailAndPassword = () => {
+        // Function to register a new user
+        const registerWithEmailAndPassword = () => {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            auth.signInWithEmailAndPassword(email, password)
+            auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
-                    // User signed in successfully
+                    // User registered successfully
                     const user = userCredential.user;
-                    console.log('User signed in:', user);
+                    console.log('User registered:', user);
 
                     // You can choose to redirect the user to a different page or show a confirmation message
                     window.location.href = './bem-vindo.html'; // Replace with the desired destination
                 })
                 .catch((error) => {
-                    // Handle sign-in errors
-                    console.error('Error signing in:', error);
+                    // Handle registration errors
+                    console.error('Error registering user:', error);
                 });
         };
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>Login to Your Account</h1>
+        <h1>Create a New Account</h1>
 
         <label for="email">Email:</label>
         <input type="email" id="email" placeholder="Email"><br>
@@ -111,9 +112,9 @@
         <label for="password">Password:</label>
         <input type="password" id="password" placeholder="Password"><br><br>
         
-        <button onclick="signInWithEmailAndPassword()">Login</button><br><br>
+        <button onclick="registerWithEmailAndPassword()">Register</button><br><br>
 
-        <a href="./registration.html">Don't have an account? Register here</a>
+        <a href="./index.html">Already have an account? Login here</a>
     </div>
 </body>
 </html>
