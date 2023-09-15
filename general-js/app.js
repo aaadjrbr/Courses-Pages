@@ -1,6 +1,8 @@
-// Import Firebase
+// Import Firebas
+
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
 
 // Your Firebase configuration
 const firebaseConfig = {
