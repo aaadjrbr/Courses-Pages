@@ -22,7 +22,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
 // Function to sign in with Email/Password
-const signInWithEmailAndPassword = () => {
+const handleSignInWithEmailAndPassword = () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
@@ -42,7 +42,7 @@ const signInWithEmailAndPassword = () => {
 };
 
 // Function to sign in with Google
-const signInWithGoogle = () => {
+const handleSignInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
 
     signInWithPopup(auth, provider)
