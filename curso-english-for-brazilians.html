@@ -23,6 +23,37 @@
 
 
 
+
+    <style>
+        .button2 {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .button2:hover {
+            background-color: #0056b3;
+        }
+
+        .box {
+            background-color: #dfdfdf;
+            color: #000000;
+            border: none;
+            padding: 13px;
+            cursor: text;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;       
+        }
+    </style>
+
+
+
 </head>
 <body style="background-color: black;">
     
@@ -85,16 +116,37 @@
             <img class="img2" src="./assets/curso1-images-course/services-english-for-brazillians.png" alt="English for Brazilians">
                 <h3>A sua jornada rumo à fluência começa aqui</h3>
                 <br>
+
+                
+
                 <h2 style="color: black; font-weight: bold;">English For Brazilians (Inglês p/ Brasileiros)</h2>
                 <a href="#intro1">Vou ficar fluente com esse curso?</a>
             
+                <br><br><br><br>
     
-     
+                <h4 style="font-size: 1.4rem;">Por motivos de segurança, você terá que colocar novamente seus dados.</h4>
+                <!-- Add a div to display error messages -->
+                <!-- Error message element (initially hidden) -->
+                <h3><strong>Acessar Módulos:</strong></h3>
+                <br>
+                <p id="errorMessage" style="display: none; color: red;">Falha na autenticação. Certifique-se que seu nome e/ou senha estão corretos.</p>
+                <form id="loginForm">
+                    <label for="nome" style="font-weight: bold;">Nome:</label>
+                    <input class="box" type="text" id="nome" name="nome" required><br>
+            
+                    <br>
+
+                    <label for="senha" style="font-weight: bold;">Senha:</label>
+                    <input class="box" type="password" id="senha" name="senha" required><br>
+                    <br>
+                    <input class="button2" type="submit" value="Acessar">
+                </form>
+            
 
      
      
     
-
+<div id="hiddenContent" style="display: none;">        
     <nav>
         <h2>Para continuar, selecione um dos módulos abaixo:</h2>
         <br>
@@ -111,6 +163,8 @@
     </nav>
     </section>
     </main>
+</div>
+
     <br><br>
     <main>
         <section id="intro1">
@@ -124,7 +178,7 @@
         </section>
         <!-- Add more modules here -->
 
-
+            
     </main>
 
     <footer>
@@ -134,7 +188,7 @@
             </div>
     </footer>
 
-
+    <script src="./curso1-js/auth-for-pages.js"></script>
     <script src="./assets/curso1-js/script-course.js"></script>
     <script src="./assets/curso1-js/course-header.js"></script>
 

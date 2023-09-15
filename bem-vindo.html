@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en, pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,13 +57,40 @@
             color: #0056b3;
         }
         
+
+        .button2 {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .button2:hover {
+            background-color: #0056b3;
+        }
+
+        .box {
+            background-color: #dfdfdf;
+            color: #000000;
+            border: none;
+            padding: 13px;
+            cursor: text;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;       
+        }
+
         button {
             background-color: #007BFF;
             color: #fff;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 0.8rem;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
@@ -83,7 +110,8 @@
     </style>
 </head>
 <body>
-    <button onclick="logout()">Logout</button>
+    <button onclick="logout()">Sair da Conta</button>
+    <br>
     <div id="adenilson-img">
         <img src="../../assets/curso1-images-course/english-w-adenilson.png" draggable="false" alt="Non-draggable image">
     </div>
@@ -92,21 +120,38 @@
 
 
 
-    <h2>Que bom te ver de volta! :)</h2>
-    <h1>Selecione o seu curso abaixo:</h1>
-    <ul>
-    <li><a href='./curso-english-for-brazilians.html'>English for Brazilians (Inglês p/ Brazileiros)</a></li>
-    </ul>
+    <h2>Que bom te ver de volta! 	&#128512;</h2>
+    <!-- Add a div to display error messages -->
+    <div id="errorMessage" style="display: none; color: red;"></div>
+    <h3>Acessar seus cursos:</h3>
+    <form id="loginForm">
+        <label for="nome" style="font-weight: bold;">Nome:</label>
+        <input class="box" type="text" id="nome" name="nome" required><br>
+        <br>
+        <label for="senha" style="font-weight: bold;">Senha:</label>
+        <input class="box" type="password" id="senha" name="senha" required><br>
+        <br>
+        <input class="button2" type="submit" value="Entrar">
+    </form>
 
-    <a href="./curso-english-for-brazilians.html">
-    <div class="img">
-        <img src="../../assets/curso1-images-course/services-english-for-brazillians.png">
+    <br><br>
+
+    <!-- User information container (hidden by default) -->
+    <div id="userInfo" style="display: none;">
+        <h2>Informações de usuário</h2>
+        <p><strong>Nome Completo:</strong> <span id="userFullName"></span></p>
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        <p><strong>Seus Cursos:</strong></p>
+        <ul id="userCourses"></ul>
+        <!-- Add other user data here -->
+        <hr>
+        <br>
     </div>
-    </a>
+
     <br><br>
 
 
-
+    <script src="./curso1-js/english-for-brazilians.js"></script>
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <script src="https://cdn.auth0.com/js/lock/11.30/lock.min.js"></script>
    <script src="./general-js/auth.js"></script>
