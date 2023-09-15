@@ -31,33 +31,15 @@ lock.on('authenticated', function(authResult) {
   var idToken = authResult.idToken;
   console.log('Authenticated!', idToken);
 
-  // You can now use the 'idToken' to verify the user's identity and perform actions on the client-side as needed.
+  // Store the ID token in localStorage
+  localStorage.setItem('id_token', idToken);
 
-  // For example, you can display the user's name and email
-  var profile = parseJwt(idToken);
-  console.log('User Profile:', profile);
-
-  // Check if the user has the "paid_user" metadata
-  if (profile && profile['https://your-namespace/paid_user'] === true) {
-    // User is a paid user, continue with your application logic
-  } else {
-    // User is not a paid user, handle this case (e.g., show an error message)
-    console.log('User is not a paid user. Access denied.');
-    // You may also want to log the user out in this case
-    logout();
-    showError('Access denied. You must be a paid user to log in.');
-  }
-
-  // You can also store the ID token in a secure manner, depending on your application's requirements.
+  // Redirect to the desired page (e.g., the "bem-vindo" page)
+  window.location.href = 'https://adenilsonribeiro-cursos.cloud/bem-vindo';
 });
 
-// Function to parse JWT (ID token)
-function parseJwt(token) {
-  var base64Url = token.split('.')[1];
-  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
-
-  return JSON.parse(jsonPayload);
+// Check if the user is already logged in when the page loads
+if (!localStorage.getItem('id_token')) {
+  // User is not logged in, redirect to the login page
+  window.location.href = 'https://adenilsonribeiro-cursos.cloud'; // Replace with your login page URL
 }
