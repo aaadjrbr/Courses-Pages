@@ -3,13 +3,38 @@ const users = [
     {
         nome: "adj",
         full_name: "Adenilson Ribeiro", // Add the full name field
-        cursosDisponiveis: ["Course 1", "Course 2", "Course 3"],
+        cursosDisponiveis: [
+            {
+                name: "English For Brazilians",
+                link: "https://adenilsonribeiro-cursos.cloud/curso-english-for-brazilians"
+            },
+            {
+                name: "Adenilson Ribeiro",
+                link: "https://adenilsonribeiro.com"
+            },
+            {
+                name: "Course 3",
+                link: "https://example.com/course-3"
+            }
+        ],
         senha: "adj",
         email: "adj@example.com",
         // ... other user data
     },
     // Add more users as needed
 ];
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Function to handle form submission
 document.getElementById("loginForm").addEventListener("submit", function (e) {
@@ -30,7 +55,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
         userCoursesList.innerHTML = '';
         user.cursosDisponiveis.forEach(course => {
             const li = document.createElement("li");
-            li.innerHTML = `<a href="${course}">${course}</a>`;
+            li.innerHTML = `<a href="${course.link}" target="_blank">${course.name}</a>`;
             userCoursesList.appendChild(li);
         });
 
