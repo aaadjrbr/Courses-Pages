@@ -45,8 +45,7 @@ lock.on('authenticated', function(authResult) {
     console.log('User is not a paid user. Access denied.');
     // You may also want to log the user out in this case
     logout();
-    // You can also display an error message to the user here
-    // Example: showError('Access denied. You must be a paid user to log in.');
+    showError('Access denied. You must be a paid user to log in.');
   }
 
   // You can also store the ID token in a secure manner, depending on your application's requirements.
