@@ -8,12 +8,6 @@
     <link rel="apple-touch-icon" href="./logo.png">
     <title>Register - English w/ Adenilson</title>
 
-    <script type="module" src="./general-js/app.js"></script>
-
-    <!-- Include Firebase JavaScript SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
-
     <!-- Include CSS styles for registration page -->
     <style>
         body {
@@ -46,7 +40,6 @@
             margin-bottom: 5px;
         }
 
-        input[type="text"],
         input[type="email"],
         input[type="password"] {
             width: 100%;
@@ -77,30 +70,6 @@
         }
     </style>
 
-    <script>
-        // Initialize Firebase with your configuration (same as login page)
-        // ...
-
-        // Function to register a new user
-        const registerWithEmailAndPassword = () => {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // User registered successfully
-                    const user = userCredential.user;
-                    console.log('User registered:', user);
-
-                    // You can choose to redirect the user to a different page or show a confirmation message
-                    window.location.href = './bem-vindo.html'; // Replace with the desired destination
-                })
-                .catch((error) => {
-                    // Handle registration errors
-                    console.error('Error registering user:', error);
-                });
-        };
-    </script>
 </head>
 <body>
     <div class="container">
@@ -116,5 +85,34 @@
 
         <a href="./index.html">Already have an account? Login here</a>
     </div>
+
+    <!-- Include Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+
+    <!-- Include your Firebase configuration -->
+    <script src="./general-js/app.js" type="module"></script>
+
+    <script>
+        // Function to register a new user
+        const registerWithEmailAndPassword = () => {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            customRegisterWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // User registered successfully
+                    const user = userCredential.user;
+                    console.log('User registered:', user);
+
+                    // You can choose to redirect the user to a different page or show a confirmation message
+                    window.location.href = './bem-vindo.html'; // Replace with the desired destination
+                })
+                .catch((error) => {
+                    // Handle registration errors
+                    console.error('Error registering user:', error);
+                });
+        };
+    </script>
 </body>
 </html>

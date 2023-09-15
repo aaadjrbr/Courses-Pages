@@ -8,13 +8,6 @@
     <link rel="apple-touch-icon" href="./logo.png">
     <title>Login - English w/ Adenilson</title>
 
-    <script type="module" src="./general-js/app.js"></script>
-
-
-    <!-- Include Firebase JavaScript SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
-
     <!-- Include CSS styles for login page -->
     <style>
         body {
@@ -77,30 +70,6 @@
         }
     </style>
 
-    <script>
-        // Initialize Firebase with your configuration (same as registration page)
-        // ...
-
-        // Function to sign in with Email/Password
-        const signInWithEmailAndPassword = () => {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // User signed in successfully
-                    const user = userCredential.user;
-                    console.log('User signed in:', user);
-
-                    // You can choose to redirect the user to a different page or show a confirmation message
-                    window.location.href = './bem-vindo.html'; // Replace with the desired destination
-                })
-                .catch((error) => {
-                    // Handle sign-in errors
-                    console.error('Error signing in:', error);
-                });
-        };
-    </script>
 </head>
 <body>
     <div class="container">
@@ -116,5 +85,34 @@
 
         <a href="./registration.html">Don't have an account? Register here</a>
     </div>
+
+    <!-- Include Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+
+    <!-- Include your Firebase configuration -->
+    <script src="./general-js/app.js" type="module"></script>
+
+    <script>
+        // Function to sign in with Email/Password
+        const signInWithEmailAndPassword = () => {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            customSignInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // User signed in successfully
+                    const user = userCredential.user;
+                    console.log('User signed in:', user);
+
+                    // You can choose to redirect the user to a different page or show a confirmation message
+                    window.location.href = './bem-vindo.html'; // Replace with the desired destination
+                })
+                .catch((error) => {
+                    // Handle sign-in errors
+                    console.error('Error signing in:', error);
+                });
+        };
+    </script>
 </body>
 </html>
