@@ -11,6 +11,7 @@ var lock = new Auth0Lock('btLuY70GxivGYTGKVUxh0XJLmgqB4xqV', 'dev-guf031gyn3qsfp
 
 // Function to initiate the login process
 function login() {
+  console.log('Login button clicked');
   lock.show();
 }
 
@@ -27,19 +28,19 @@ function logout() {
 
 // Handle the authentication callback
 lock.on('authenticated', function(authResult) {
+  console.log('Authenticated callback called');
   // Extract user information from the ID token
   var idToken = authResult.idToken;
   console.log('Authenticated!', idToken);
 
-  // You can now use the 'idToken' to verify the user's identity and perform actions on the client-side as needed.
-
-  // For example, you can display the user's name and email
-  var profile = parseJwt(idToken);
-  console.log('User Profile:', profile);
+  // Store the ID token in localStorage
+  localStorage.setItem('id_token', idToken);
 
   // Check if the user has the "paid_user" metadata
+  var profile = parseJwt(idToken);
   if (profile && profile['https://your-namespace/paid_user'] === true) {
     // User is a paid user, continue with your application logic
+    document.getElementById('protected-content').style.display = 'block';
   } else {
     // User is not a paid user, handle this case (e.g., show an error message)
     console.log('User is not a paid user. Access denied.');
@@ -47,8 +48,6 @@ lock.on('authenticated', function(authResult) {
     logout();
     showError('Access denied. You must be a paid user to log in.');
   }
-
-  // You can also store the ID token in a secure manner, depending on your application's requirements.
 });
 
 // Function to parse JWT (ID token)
