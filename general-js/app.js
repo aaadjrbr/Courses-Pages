@@ -8,18 +8,18 @@ const auth0 = new Auth0Client({
 // Login function
 const login = async () => {
   try {
-      await auth0.loginWithRedirect();
+    await auth0.loginWithRedirect();
   } catch (error) {
-      console.error('Login error:', error);
+    console.error('Login error:', error);
   }
 };
 
 // Logout function
 const logout = async () => {
   try {
-      await auth0.logout();
+    await auth0.logout();
   } catch (error) {
-      console.error('Logout error:', error);
+    console.error('Logout error:', error);
   }
 };
 
@@ -31,17 +31,17 @@ const isAuthenticated = async () => {
 // Handle the authentication callback (in your callback route)
 const handleAuthenticationCallback = async () => {
   try {
-      await auth0.handleRedirectCallback();
+    await auth0.handleRedirectCallback();
   } catch (error) {
-      console.error('Authentication callback error:', error);
+    console.error('Authentication callback error:', error);
   }
 
   // Check if the user is authenticated after the callback
   const authenticated = await isAuthenticated();
 
   if (authenticated) {
-      document.getElementById('login-button').style.display = 'none';
-      document.getElementById('logout-button').style.display = 'block';
+    document.getElementById('login-button').style.display = 'none';
+    document.getElementById('logout-button').style.display = 'block';
   }
 };
 
