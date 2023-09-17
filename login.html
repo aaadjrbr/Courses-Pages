@@ -69,51 +69,77 @@
     </div>
 
     <script>
-document.getElementById("registrationForm").addEventListener("submit", function(event) {
+document.getElementById("registrationForm").addEventListener("submit", async function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
-    // Perform a test action (e.g., show an alert)
-    alert("Registration form submitted. Add your registration logic here.");
-});
+    // Get user input from the form fields
+    const regEmail = document.getElementById("regEmail").value;
+    const regPassword = document.getElementById("regPassword").value;
 
-document.getElementById("loginForm").addEventListener("submit", async function(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    // Perform user registration logic here
+    const registrationResponse = await performRegistration(regEmail, regPassword);
 
-    const loginEmail = document.getElementById("loginEmail").value;
-    const loginPassword = document.getElementById("loginPassword").value;
-
-    // Perform the login logic here (e.g., make an API request)
-    // You should include code to check if login is successful
-    // If successful, then redirect the user
-    const loginResponse = await performLogin(loginEmail, loginPassword);
-    
-    if (loginResponse.success) {
-        // Redirect to the dashboard or another page after successful login
-        window.location.href = "./curso-english-for-brazilians.html";
+    if (registrationResponse.success) {
+        // Registration was successful, you can show a success message or redirect the user
+        alert("Registration successful. You can now log in.");
     } else {
-        // Handle login failure, e.g., show an error message
-        alert("Login failed. Please check your credentials.");
+        // Registration failed, handle the error (e.g., duplicate email)
+        alert("Registration failed. Please check your information and try again.");
     }
 });
 
-async function performLogin(email, password) {
-    // Make an API request (e.g., using fetch) to your login endpoint (login.js)
-    // Include the login logic and return a response indicating success or failure
-    const response = await fetch("/.netlify/functions/login.js", {
+async function performRegistration(email, password) {
+    // Make an API request (e.g., using fetch) to your registration endpoint (register.js)
+    // Include the registration logic and return a response indicating success or failure
+    const response = await fetch("/.netlify/functions/register.js", {
         method: "POST",
         body: JSON.stringify({ email, password }),
     });
-    
+
     if (response.ok) {
         // Assuming the server returns a success response
         return { success: true };
     } else {
-        // Handle login failure (e.g., incorrect credentials)
+        // Handle registration failure (e.g., duplicate email, validation errors)
         return { success: false };
     }
 }
 
 
+        document.getElementById("loginForm").addEventListener("submit", async function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            const loginEmail = document.getElementById("loginEmail").value;
+            const loginPassword = document.getElementById("loginPassword").value;
+
+            // Perform the login logic here (e.g., make an API request)
+            const loginResponse = await performLogin(loginEmail, loginPassword);
+
+            if (loginResponse.success) {
+                // Redirect to the dashboard or another page after successful login
+                window.location.href = "./curso-english-for-brazilians.html";
+            } else {
+                // Handle login failure, e.g., show an error message
+                alert("Login failed. Please check your credentials.");
+            }
+        });
+
+        async function performLogin(email, password) {
+            // Make an API request (e.g., using fetch) to your login endpoint (login.js)
+            // Include the login logic and return a response indicating success or failure
+            const response = await fetch("/.netlify/functions/login.js", {
+                method: "POST",
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                // Assuming the server returns a success response
+                return { success: true };
+            } else {
+                // Handle login failure (e.g., incorrect credentials)
+                return { success: false };
+            }
+        }
     </script>
 
     <script src="./netlify/functions/login.js"></script>
