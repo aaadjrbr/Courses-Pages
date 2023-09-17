@@ -69,24 +69,19 @@
     </div>
 
     <script>
-        // JavaScript for form submission (you can replace this with your backend logic)
-        document.getElementById("registrationForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const regEmail = document.getElementById("regEmail").value;
-            const regPassword = document.getElementById("regPassword").value;
-            
-            // Perform registration logic here (e.g., make an API request)
-            // You would typically send the data to your backend for processing
-        });
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
 
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const loginEmail = document.getElementById("loginEmail").value;
-            const loginPassword = document.getElementById("loginPassword").value;
-            
-            // Perform login logic here (e.g., make an API request)
-            // You would typically send the data to your backend for authentication
-        });
+    // Perform a test action (e.g., show an alert)
+    alert("Registration form submitted. Add your registration logic here.");
+});
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Perform a test action (e.g., show an alert)
+    alert("Login form submitted. Add your login logic here.");
+});
     </script>
 
 
