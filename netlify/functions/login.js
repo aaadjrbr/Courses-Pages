@@ -91,3 +91,7 @@ exports.handler = async (event) => {
     };
   }
 };
+
+
+// After successful login, redirect to the dashboard page
+window.location.href = "../../curso-english-for-brazilians.html";
